@@ -1,0 +1,86 @@
+/* Whole page background */
+/* Whole page background */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: 
+    url('https://img.freepik.com/free-vector/flat-design-paw-prints-background_23-2151163105.jpg?semt=ais_incoming&w=740&q=80') 
+    no-repeat center center fixed;
+  background-size: cover;
+  /* Optional gradient overlay for better contrast */
+  background-blend-mode: overlay;
+  background-color: rgba(255, 236, 210, 0.7); /* soft gradient overlay */
+}
+
+/* App container */
+.app {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  width: 420px;
+  max-width: 90%;
+}
+
+/* Title and subtitle */
+.title {
+  color: #ff6f61;
+  margin-bottom: 5px;
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Dropdown and button */
+.controls {
+  margin: 15px 0;
+}
+
+select, button {
+  padding: 12px;
+  margin: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+select {
+  background: #f0f0f0;
+}
+
+button {
+  background: #ff6f61;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e85b50;
+}
+
+/* Dog image styling */
+#imageContainer img {
+  margin-top: 20px;
+  width: 320px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Smooth fade-in for image */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
