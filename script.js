@@ -2,7 +2,7 @@ const breedList = document.getElementById("breedList");
 const getImageBtn = document.getElementById("getImageBtn");
 const imageContainer = document.getElementById("imageContainer");
 
-// Load breeds into dropdown
+// Load breeds into dropdown menu kj
 async function loadBreeds() {
   const response = await fetch("https://dog.ceo/api/breeds/list/all");
   const data = await response.json();
