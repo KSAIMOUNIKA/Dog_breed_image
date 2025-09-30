@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dog Breed Viewer </title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Viewer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <h1 class="title"> Dog Breed Image Viewer </h1>
-    <p class="subtitle">Select a breed and see the cutest dogs!</p>
-
-    <div class="controls">
-      <select id="breedList"></select>
-      <button id="getImageBtn">Show Me </button>
+    
+    <div id="splashScreen" class="splash-screen">
+        <h1 class="splash-title">Fetching the Cutest Pups...</h1>
     </div>
 
-    <div id="imageContainer"></div>
-  </div>
+    <div class="app hidden" id="mainApp">
+        <h1 class="title"> Dog Breed Image Viewer </h1>
+        <p class="subtitle">Select a breed and see the cutest dogs!</p>
 
-  <script src="script.js"></script>
+        <div class="controls">
+            <select id="breedList"></select>
+            <button id="getImageBtn">Show Me </button>
+        </div>
+
+        <div id="loadingIndicator" class="hidden">Fetching the cutest dogs...</div>
+        
+        <div id="imageContainerBlock"> 
+            <div id="imageContainer"></div>
+        </div>
+
+        <div id="moreImagesSection"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
