@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Breed Viewer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Breed Viewer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div id="splashScreen" class="splash-screen">
-        <h1 class="splash-title">Fetching the Cutest Pups...</h1>
+  <div id="splashScreen" class="splash-screen">
+    <video autoplay muted loop playsinline id="splashVideo">
+      <source src="https://cdn.pixabay.com/video/2016/08/22/4740-179738694_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1 class="splash-title">Find Your Pawfect Companion...</h1>
+    <p class="splash-paragraph">Thinking of adding a furry friend to your family? </p>
+    <p class="splash-paragraph">Explore the breeds and discover the one that’s meant for you</p>
+  </div>
+
+  <div class="app hidden" id="mainApp">
+    <h1 class="title">DOG BREED IMAGE EXPLORER</h1>
+    <p class="subtitle">Choose a breed and let the cuteness steal your heart!</p>
+    <div class="controls">
+      <select id="breedList"></select>
+      <button id="getImageBtn">Show Me</button>
     </div>
-
-    <div class="app hidden" id="mainApp">
-        <h1 class="title"> Dog Breed Image Viewer </h1>
-        <p class="subtitle">Select a breed and see the cutest dogs!</p>
-
-        <div class="controls">
-            <select id="breedList"></select>
-            <button id="getImageBtn">Show Me </button>
-        </div>
-
-        <div id="loadingIndicator" class="hidden">Fetching the cutest dogs...</div>
-        
-        <div id="imageContainerBlock"> 
-            <div id="imageContainer"></div>
-        </div>
-
-        <div id="moreImagesSection"></div>
+    <div id="loadingIndicator" class="hidden">Fetching the cutest dogs...</div>
+    <div id="imageContainerBlock">
+      <div id="imageContainer"></div>
     </div>
+    <div id="moreImagesSection"></div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
