@@ -44,9 +44,9 @@ async function loadBreeds() {
         breedList.appendChild(mainOption);
         subBreeds.forEach(subBreed => {
           let option = document.createElement("option");
-          const value = ${mainBreed}-${subBreed};
+          const value = `${mainBreed}-${subBreed}`;
           option.value = value;
-          option.innerText = -- ${formatBreedName(value)};
+          option.innerText = `-- ${formatBreedName(value)}`;
           breedList.appendChild(option);
         });
       }
@@ -59,9 +59,9 @@ async function loadBreeds() {
 function getBreedUrlFragment(breedValue) {
   if (breedValue.includes('-')) {
     const [main, sub] = breedValue.split('-');
-    return breed/${main}/${sub};
+    return `breed/${main}/${sub}`;
   }
-  return breed/${breedValue};
+  return `breed/${breedValue}`;
 }
 
 function createImageWrapper(imgSrc, altText) {
@@ -72,7 +72,7 @@ function createImageWrapper(imgSrc, altText) {
   img.alt = altText;
   const downloadLink = document.createElement('a');
   downloadLink.href = imgSrc;
-  downloadLink.download = ${altText}.jpg;
+  downloadLink.download = `${altText}.jpg`;
   downloadLink.innerText = 'Download';
   downloadLink.classList.add('download-btn');
   wrapper.appendChild(img);
@@ -88,11 +88,11 @@ async function getBreedImage() {
   moreImagesSection.innerHTML = '';
   try {
     const urlFragment = getBreedUrlFragment(breed);
-    const response = await fetch(https://dog.ceo/api/${urlFragment}/images/random);
+    const response = await fetch(`https://dog.ceo/api/${urlFragment}/images/random`);
     const data = await response.json();
     setLoading(false);
     if (data.status !== 'success') {
-      imageContainer.innerHTML = <p class="error-message">Error fetching image</p>;
+      imageContainer.innerHTML = `<p class="error-message">Error fetching image</p>`;
       return;
     }
     const altText = formatBreedName(breed);
@@ -111,7 +111,7 @@ async function getBreedImage() {
     newButton.addEventListener('click', () => getMoreImages(breed));
   } catch (error) {
     setLoading(false);
-    imageContainer.innerHTML = <p class="error-message">An error occurred while fetching the dog image.</p>;
+    imageContainer.innerHTML = `<p class="error-message">An error occurred while fetching the dog image.</p>`;
   }
 }
 
@@ -119,7 +119,7 @@ async function getMoreImages(breed) {
   setLoading(true);
   try {
     const urlFragment = getBreedUrlFragment(breed);
-    const response = await fetch(https://dog.ceo/api/${urlFragment}/images/random/3);
+    const response = await fetch(`https://dog.ceo/api/${urlFragment}/images/random/3`);
     const data = await response.json();
     setLoading(false);
     if (data.status !== 'success') return;
